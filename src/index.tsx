@@ -1,8 +1,9 @@
 import React, { KeyboardEvent, ChangeEvent } from 'react';
 import { Box, Button, TextInput } from 'grommet';
+import { DeincrementIcon, IncrementIcon } from './icons';
 
 interface Props {
-	value?: number;
+	value: number;
 	disabled?: boolean;
 	min?: number;
 	max?: number;
@@ -16,6 +17,10 @@ export const Stepper: React.FC<Props> = ({
 	max,
 	onChange,
 }) => {
+	function shift(step: number): void {
+		onChange(value + step);
+	}
+
 	function handleInput(event: KeyboardEvent<HTMLInputElement>): void {
 		function block(): void {
 			event.preventDefault();
@@ -39,14 +44,18 @@ export const Stepper: React.FC<Props> = ({
 
 	return (
 		<Box>
-			<Button>-</Button>
+			<Button a11yTitle="Deincrement" onClick={() => shift(-1)}>
+				<DeincrementIcon />
+			</Button>
 			<TextInput
 				value={value}
 				disabled={disabled}
 				onKeyPress={handleInput}
 				onChange={handleInputChange}
 			/>
-			<Button>+</Button>
+			<Button a11yTitle="Increment" onClick={() => shift(1)}>
+				<IncrementIcon />
+			</Button>
 		</Box>
 	);
 };

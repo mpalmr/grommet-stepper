@@ -14,6 +14,7 @@ module.exports = {
 		'react/prop-types': 0,
 		'react/jsx-indent': [2, 'tab'],
 		'react/jsx-indent-props': [2, 'tab'],
+		'react/jsx-props-no-spreading': 0,
 	},
 	overrides: [
 		{
