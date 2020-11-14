@@ -1,0 +1,52 @@
+{
+  "name": "grommet-stepper",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+		"build": "NODE_ENV=production npm run clean && npm run babel",
+		"babel": "babel -x \".ts\" -x \".tsx\" src -d lib --minified",
+		"clean": "rm -rf lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpalmr/grommet-stepper.git"
+  },
+  "author": "Matthew Palmer <mspalmer91@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mpalmr/grommet-stepper/issues"
+  },
+  "homepage": "https://github.com/mpalmr/grommet-stepper#readme",
+  "peerDependencies": {
+    "grommet": "^2.15.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/preset-typescript": "^7.12.1",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.1.2",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/jest": "^26.0.15",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "grommet": "*",
+    "jest": "^26.6.3",
+    "react": "*",
+    "react-dom": "*",
+    "typescript": "^4.0.5"
+  }
+}

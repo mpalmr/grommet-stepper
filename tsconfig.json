@@ -1,0 +1,14 @@
+{
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules"],
+  "extends": "@tsconfig/recommended",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["DOM", "ESNext"],
+    "jsx": "react",
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+		"esModuleInterop": true,
+		"sourceMap": true
+  }
+}
