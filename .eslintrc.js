@@ -3,11 +3,17 @@
 module.exports = {
 	root: true,
 	extends: 'airbnb-typescript',
-	parser: 'babel-eslint',
+	parser: '@typescript-eslint/parser',
+	parserOptions: { project: './tsconfig.json' },
 	rules: {
 		indent: [2, 'tab'],
 		'no-tabs': 0,
 		'arrow-parens': [2, 'as-needed'],
+		'import/prefer-default-export': 0,
+		'@typescript-eslint/indent': 0,
+		'react/prop-types': 0,
+		'react/jsx-indent': [2, 'tab'],
+		'react/jsx-indent-props': [2, 'tab'],
 	},
 	overrides: [
 		{
