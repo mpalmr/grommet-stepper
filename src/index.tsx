@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, ChangeEvent } from 'react';
+import React, { KeyboardEvent } from 'react';
 import { Box, Button, TextInput } from 'grommet';
 import { DeincrementIcon, IncrementIcon } from './icons';
 
@@ -38,22 +38,29 @@ export const Stepper: React.FC<Props> = ({
 		}
 	}
 
-	function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
-		onChange(parseInt(event.target.value, 10));
-	}
-
 	return (
 		<Box>
-			<Button a11yTitle="Deincrement" onClick={() => shift(-1)}>
+			<Button
+				a11yTitle="Deincrement"
+				disabled={disabled || value < min}
+				onClick={() => shift(-1)}
+			>
 				<DeincrementIcon />
 			</Button>
 			<TextInput
 				value={value}
 				disabled={disabled}
 				onKeyPress={handleInput}
-				onChange={handleInputChange}
+				onChange={event => {
+					console.log(parseInt(event.target.value, 10));
+					return onChange(parseInt(event.target.value, 10));
+				}}
 			/>
-			<Button a11yTitle="Increment" onClick={() => shift(1)}>
+			<Button
+				a11yTitle="Increment"
+				disabled={disabled || (max != null && value > max)}
+				onClick={() => shift(1)}
+			>
 				<IncrementIcon />
 			</Button>
 		</Box>
