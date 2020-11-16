@@ -2,7 +2,7 @@ import React, { KeyboardEvent } from 'react';
 import { Box, Button, TextInput } from 'grommet';
 import { DeincrementIcon, IncrementIcon } from './icons';
 
-interface Props {
+export interface StepperProps {
 	value: number;
 	disabled?: boolean;
 	min?: number;
@@ -10,7 +10,7 @@ interface Props {
 	onChange: (newValue: number | ((prev: number) => number)) => void
 }
 
-export const Stepper: React.FC<Props> = ({
+export const Stepper: React.FC<StepperProps> = ({
 	value,
 	disabled = false,
 	min = 0,
